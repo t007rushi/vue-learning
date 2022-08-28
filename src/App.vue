@@ -5,8 +5,10 @@
   <div v-html="title"></div>
   <div v-bind:id="ID" v-bind:class="[`container`,`danger`]">Hello</div>
   <div :id="ID" class="underline" :class="status ? danger : safe">Conditional</div>
-  <div :class="[!status && `danger`]">Color it 2</div>
-  <!-- underline -->
+  <div :class="[!status && 'danger']">Color it 2</div>
+  <div :style="{color}">InLine styling Color it</div>
+
+    <div :style="stylishObject">InLine styling Color it</div>
 </template>
 
 <script>
@@ -22,7 +24,13 @@ export default {
       status : false,
       danger : "danger",
       safe : "safe",
-      color : "yellow",
+      color : "violet",
+stylishObject:{
+backgroundColor: "yellow",
+color : "orange"
+,border : "1px solid violet",
+padding : "20px",
+},
     };
   },
   methods: {
