@@ -9,6 +9,7 @@
         "src/*"
       ]
     },
+    // "experimentalDisableTemplateSupport": true,
     "lib": [
       "esnext",
       "dom",

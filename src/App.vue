@@ -1,16 +1,30 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>{{name}}</h1>
+  <button @click="append" v-bind:disabled="isDisabled">Append</button>
+  <div v-html="title"></div>
+<div v-bind:id="ID" v-bind:class="container">Hello</div>
+<div :id="ID" :class="container">Hello</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+data(){
+  return {
+    name : "Rushikesh",
+    title :"<h1 style=color:red>Hello</h1>",
+    ID : "specialOne",
+    container : "wrapper",
+    isDisabled : true,
   }
+}
+,
+methods : {
+append(){
+  this.name+=" Tarapure" 
+}
+}
 }
 </script>
 
@@ -22,5 +36,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.wrapper{
+  border : 1px solid black;
+  width : 50%;
 }
 </style>
