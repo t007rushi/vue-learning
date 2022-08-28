@@ -13,6 +13,17 @@
   <h2 v-else-if="num < 0">This is -ve</h2>
   <h2 v-else> This is Zero</h2>
   <div :style="stylishObject">InLine styling Color it</div>
+
+<template v-if="num === -1">
+  <h3>1</h3>
+  <h3>2</h3>
+  <h3>3</h3>
+</template>
+
+
+  <div v-if="booleanCheck">Using if</div>
+<div v-show="booleanCheck">Using Show</div>
+
 </template>
 
 <script>
@@ -36,6 +47,8 @@ export default {
         padding: "20px",
       },
       num: -1,
+      booleanCheck : false,
+
     };
   },
   methods: {
